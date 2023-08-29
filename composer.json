@@ -1,8 +1,13 @@
 {
   "name": "mpernia/module-maker",
   "description": "Create scaffolding for Laravel framework with laravel doctrine dependency",
+  "version": "0.0.1",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "type": "library",
   "license": "MIT",
+  "keywords": ["laravel", "doctrine"],
+  "homepage": "https://github.com/mpernia/module-maker",
   "authors": [
     {
       "name": "Maikel Enrique Pernia Matos",
@@ -26,6 +31,24 @@
   "autoload-dev": {
     "psr-4": {
       "ModuleMaker\\Tests\\": "tests/"
+    },
+    "config": {
+      "sort-packages": true
+    },"extra": {
+      "laravel": {
+        "providers": [
+          "ModuleMaker\\ModuleMaker\\Providers\\ModuleMakerServiceProvider"
+        ],
+        "aliases": {
+          "Maker": "BenkiGroup\\ModuleMaker\\Facades\\ModuleMakerFacade"
+        }
+      }
+    },
+    "scripts": {
+      "post-autoload-dump": [
+        "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+        "@php artisan package:discover --ansi"
+      ]
     }
   }
 }
