@@ -1,0 +1,31 @@
+{
+  "name": "mpernia/module-maker",
+  "description": "Create scaffolding for Laravel framework with laravel doctrine dependency",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Maikel Enrique Pernia Matos",
+      "email": "contact@maikel-enrique-pernia-matos.com",
+      "homepage": "https://maikel-enrique-pernia-matos.com/"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "illuminate/console": "^9.0|^10.0",
+    "illuminate/filesystem": "^9.0|^10.0",
+    "illuminate/support": "^9.0|^10.0",
+    "illuminate/validation": "^9.0|^10.0",
+    "laravel-doctrine/orm": "^1.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "ModuleMaker\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ModuleMaker\\Tests\\": "tests/"
+    }
+  }
+}
